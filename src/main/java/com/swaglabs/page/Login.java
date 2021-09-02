@@ -18,11 +18,11 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class Login extends com.swaglabs.utility.BaseClass {
 	
-
+	//Invoking the constructor
 	public Login(AppiumDriver<MobileElement> driver) {
 	}
 		
-	// Login
+	// Logins to the application based on the given credentials and checks whether login operation is successful or not
 	public void clickonLogin(String username, String password) {
 		MobileElement Usernametextfield=driver.findElement(MobileBy.AccessibilityId("test-Username"));
 		MobileElement Password=driver.findElement(MobileBy.AccessibilityId("test-Password"));
@@ -45,6 +45,7 @@ public class Login extends com.swaglabs.utility.BaseClass {
 
 	}
 	
+	//Taps on autofill option and clicks on login button
 	public void tapToAutoFill(String Usrname) {
 		
 		driver.findElement(MobileBy.AccessibilityId("test-"+Usrname)).click();
@@ -53,7 +54,7 @@ public class Login extends com.swaglabs.utility.BaseClass {
 			
 		if(driver.findElementByXPath("//android.widget.TextView[@text='PRODUCTS']").isDisplayed()) {
 			System.out.println("Loggedin Successfully");
-//			log.info("Loggedin Successfully");
+			log.info("Loggedin Successfully");
 		}
 		}catch(org.openqa.selenium.NoSuchElementException e) {
 			String errmsg=driver.findElement(MobileBy.xpath("//android.view.ViewGroup[@content-desc='test-Error message']/android.widget.TextView")).getText();

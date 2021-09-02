@@ -11,6 +11,7 @@ import com.swaglabs.page.Add_Remove_Cart;
 import com.swaglabs.page.Login;
 import com.swaglabs.page.Product_Page;
 import com.swaglabs.utility.Scroll;
+import com.swaglabs.utility.WaitUtility;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
@@ -20,62 +21,101 @@ public class Verify_Listview_Add_Remove_Checkout {
 	public static AppiumDriver<MobileElement> driver;
 	public static Logger log =Logger.getLogger("Verify_Gridview_Checkout.class");
 	
+	//App launches
 	@BeforeTest()
 	public void applaunch() {
 		driver=com.swaglabs.utility.BaseClass.setUp();
 
 	}
+	
+/*	After launching the app from the product list view page adds two products to the cart and removes one 
+    from the cart and performs checkout operation with existing product in the cart. 
+	Followed by logout from the application*/
 	@Test(priority=0)
     public void listview_Checkout() throws IOException {
 		log.info("Starting Checkout Scenario");
 		Login login=new Login(driver);
-//		login.clickonLogin("standard_user","secret_sauce");
+
 		Product_Page menu=new Product_Page(driver);
 		Add_Remove_Cart add=new Add_Remove_Cart(driver);
-		add.scrollDown();
-//		Login login=new Login(driver);
+		Scroll s=new Scroll(driver);
+		
+		//Scrolls down in the login page
+		s.scrollDown();
+		/*Taps on the specified element so that credentials will be auto filled to placeholders 
+		and clicks on login button*/
 		login.tapToAutoFill("standard_user");
+		
+		//Clicks on Grid/List view toggle button
 		menu.clickon_Toogle_List_Grid();
+		
+		//Finding the details of the products that needs to be added to the cart
 		String product1=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Item title'])[1]")).getText();
 		String productprice1=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Price'])[1]")).getText();
 		String product2=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Item title'])[3]")).getText();
 		String productprice2=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Price'])[3]")).getText();
+		
+		//Adding of the products to the cart
 		add.add_ToCart(1);
 		add.add_ToCart(2);
-//		menu.desc_sort();
-		Scroll s=new Scroll(driver);
-//		s.scroll_UntilElementFound(product);
-//		s.scroll_UntilElementFound("ADD TO CART");		
+
+		
+		/*Displays the cart status and displays the count of the 
+		products which are there in the cart if it is not empty*/
 		add.cart_status();
+		
+		//Navigates to the cart
 		add.gotoCart();
+		
+		//Validates the product details
 		add.product_Validation(product1);
 		add.price_Validation(productprice1);
-//		add.product_Validation(product2);
-//		add.price_Validation(productprice2);
+		add.product_Validation(product2);
+		add.price_Validation(productprice2);
+		
+		//Removes a product from the cart based on the index
 		add.removeFromCart(1);
+		
+		//Validates whether the product is is there or has been removed before clicking on checkout
 		add.product_Validation(product2);
     	add.price_Validation(productprice2);
+    	
+    	//Scrolls until the desired element and clicks if the element is found and clicks on defined element
 		s.scroll_UntilElementFound("CHECKOUT");
+		
+		/*After clicking on checkout button, validates whether 
+		navigated to checkout information and fills the details 
+		once it navigates to checkout information page*/
 		add.fillCheckoutInfo();
+		
+		/*After completing checkinformation filling, 
+		again validates the product details and 
+		validates whether navigated to checkout overview page*/
 		add.product_Validation(product2);
 		add.price_Validation(productprice2);
 		add.checkout_Overview();
+		
+		/* After Validation, scrolls until finish button is found
+		 and once it is displayed and performs click operation */ 
 		s.scroll_UntilElementFound("FINISH");		
-//		add.clickonFinish();
+
+		
+		/*After clicking on finish button, checks for the order 
+		status and navigates back to home page */
 		add.orderStatus();
 		add.backtoHome();
 		
+		/*Navigates to menu and checks for the logout option 
+		and clicks on logout option*/
 		menu.clickon_LogoutOption();
-		log.info("End of Verify_Listview_Multiple_Products_Checkout");
+		log.info("End of Verify_Listview_Add_Remove_Checkout");
 	}
+	
+	//After the execution of the test cases, driver quit function is called.
 	@AfterTest()
 	public void teardown() {
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		WaitUtility w=new WaitUtility(driver);
+		w.implicitwait();
         log.info("Driver Quit");
 		driver.quit();
 

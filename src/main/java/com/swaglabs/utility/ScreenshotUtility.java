@@ -19,14 +19,17 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public class ScreenshotUtility extends BaseClass{
+	
+	//Invoking the constructor
 	public ScreenshotUtility(AppiumDriver<MobileElement> driver) {
 		
 	}
 	
-	public void screenshot() throws IOException{
-		String path_screenshot="C:\\Users\\prade\\eclipse-workspace\\SwagLabs_App_Automation\\src\\main\\utility\\screenshots\\";
+	// Screenshot will be captured and will be stored in the specified path
+	public void screenshot(String filename) throws IOException{
+		String path_screenshot=System.getProperty("user.dir")+"\\src\\main\\utility\\screenshots\\";
 	    File srcFile=((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-	    String filename=UUID.randomUUID().toString(); 
+ 
 	    File targetFile=new File(path_screenshot + filename +".jpg");
 	    FileUtils.copyFile(srcFile,targetFile);
 	} }

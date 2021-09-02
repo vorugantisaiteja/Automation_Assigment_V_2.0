@@ -25,10 +25,13 @@ import com.swaglabs.utility.ScreenshotUtility;
 
 public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 	
+	//Invoking the constructor
 	public Add_Remove_Cart(AppiumDriver<MobileElement> driver) {
 		
 	}
 //	Logger log=new Logger.getLogger(BaseClass.class);
+	
+	//Adds a product to the cart based on the index num
 	public void add_ToCart(int num) throws IOException {
 		String ele="(//android.view.ViewGroup[@content-desc='test-ADD TO CART'])[";
 		String strend="]";
@@ -49,15 +52,17 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 			System.out.println("Bug: Could not add the product "+product);
 			log.info("Bug: Could not add the product "+product);
 			ScreenshotUtility scrnsht=new ScreenshotUtility(driver);
-			scrnsht.screenshot();
+			scrnsht.screenshot("Bug-Unable to add product");
 		}
 		
 
 	}
-	public int cart_status() {
+	
+	/*Displays the cart status and displays the count of the 
+	products which are there in the cart if it is not empty*/
+	public void cart_status() {
 		int status=0;
 		log.info("Finding the Cart Status");
-//		public static String status="//android.view.ViewGroup[@content-desc='test-Cart']/android.view.ViewGroup/android.view.ViewGroup";
 		try {		
 		if(driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"test-Cart\"]/android.view.ViewGroup/android.view.ViewGroup")).isDisplayed()) {
 			String count=driver.findElement(MobileBy.xpath("//android.view.ViewGroup[@content-desc='test-Cart']/android.view.ViewGroup/android.widget.TextView")).getText();
@@ -70,54 +75,61 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 			System.out.println("Cart Status is Empty");
 			log.info("Cart Status is Empty");
 			status=0;
-//			e.printStackTrace();
+
 		}
 
-		return status;
+//		return status;
 	}
 	
 	 
-    
+    //Navigates to the cart
 	public void gotoCart() {
 		MobileElement cart=driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"test-Cart\"]/android.view.ViewGroup/android.widget.ImageView"));
 		cart.click();
         log.info("Navigated to the cart");
 	}
 	
+	//Checks for the checkout button and clicks on checkout button
 	public void checkout() {
 		
 		try {
-			
-		
 		if(driver.findElement(MobileBy.AccessibilityId("test-CHECKOUT")).isDisplayed()) {
 			driver.findElement(MobileBy.AccessibilityId("test-CHECKOUT")).click();
+			log.info("Clicked on Checkout");
 		}
 		}catch(org.openqa.selenium.NoSuchElementException e) {
+			log.info("Unable to click on Checkout");
 		}
 	}
+	
+	//Validates the product name with respect to the given string
 	public void product_Validation(String ele) {
 		try {
 			if(driver.findElementByXPath("//android.widget.TextView[@text='"+ele+"']").isDisplayed()) {
-				log.info(ele+" has been successfully added to the cart");
+				log.info(ele+" product name is same as mentioned in the product page");
 				
 			}
 			}catch(org.openqa.selenium.NoSuchElementException e1) {
+				log.info("Product name is not same as mentioned in the product page");
 				
 	}
 	}
+	
+	//Validates the price of product with respect to the parameter price
 	public void price_Validation(String price) {
 		try {
 			if(driver.findElementByXPath("//android.widget.TextView[@text='"+price+"']").isDisplayed()) {
-				log.info("Price is same as mentioned in the details page "+price);
+				log.info("Price is same as mentioned in the product page "+price);
 				
 			}
 			}catch(org.openqa.selenium.NoSuchElementException e1) {
-				log.info("Price is not same as mentioned in the details page");
+				log.info("Price is not same as mentioned in the product page");
 	}
 		
 		
 	}
 	
+	//Fills the the checkout details and clicks in continue button
 	public void fillCheckoutInfo() {
 		
 		try {
@@ -135,6 +147,7 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 			
 		}
 	}
+	//Checks whether able to navigate checkout overview page or not
 	public void checkout_Overview() {
 		try {
 			
@@ -145,45 +158,30 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 			log.info("Issue while navigating to Checkout Overview page");
 		}	
 	}
-	public void scrollDown() {
-
-		TouchAction  action =new TouchAction(driver);	
-		Dimension size	=driver.manage().window().getSize();
-		int width=size.width;
-		int height=size.height;				
-		int middleOfX=width/2;
-		int startYCoordinate= (int)(height*.5);
-		int endYCoordinate= (int)(height*.2);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
-		
-		new TouchAction((PerformsTouchActions) driver)
-		.press(PointOption.point(middleOfX, startYCoordinate))
-		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
-		.moveTo(PointOption.point(middleOfX, endYCoordinate)).release().perform();		
-		
-	}
+    
+	//Clicks on finish button
 	public void clickonFinish() {
 		driver.findElement(MobileBy.AccessibilityId("test-FINISH")).click();
 	}
+	
+	//Extracts the order status and displays the status
 	public void orderStatus() {
 		String orderstatus=driver.findElement(By.xpath("//android.widget.ScrollView[@content-desc=\"test-CHECKOUT: COMPLETE!\"]/android.view.ViewGroup/android.widget.TextView[2]")).getText();
 		System.out.println(orderstatus);
 		log.info(orderstatus);
 	}
+	
+	//Clicks on back to home button
 	public void backtoHome() {
 		driver.findElement(MobileBy.AccessibilityId("test-BACK HOME")).click();
 	}
+	
+	//Validates the product details are same in products page and home page
 	public void detailPageVerification(int i) throws IOException {
 		String HomePageEletext=driver.findElement(By.xpath("(//android.widget.TextView[@content-desc='test-Item title'])["+i+"]")).getText();
 		driver.findElement(By.xpath("(//android.widget.TextView[@content-desc='test-Item title'])["+i+"]")).click();
 		String Detailpagetext=driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"test-Description\"]/android.widget.TextView[1]")).getText();
 		
-//		AssertJUnit.assertEquals(HomePageEletext, Detailpagetext);
          if(HomePageEletext.equals(Detailpagetext)) {
         	 System.out.println(HomePageEletext+" Product Name is same in Home page and Detail Page"); 
              log.info(HomePageEletext+" Product Name is same in Home page and Detail Page");
@@ -192,10 +190,11 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
         	 System.out.println("Bug: "+HomePageEletext+"- Product Name is not same in Home page and Detail Page");
         	 log.info("Bug: "+HomePageEletext+"- Product Name is not same in Home page and Detail Page");
         	 ScreenshotUtility scrnsht=new ScreenshotUtility(driver);
- 			 scrnsht.screenshot();
+ 			 scrnsht.screenshot("Bug-Mismatch of Product Details");
          }
 		
 	}
+	//Removes an element from the cart based on the index num
 	public void removeFromCart(int num) {
 		String ele="(//android.view.ViewGroup[@content-desc='test-REMOVE'])[";
 		String strend="]";

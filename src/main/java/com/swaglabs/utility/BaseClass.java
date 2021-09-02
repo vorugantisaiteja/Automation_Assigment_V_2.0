@@ -44,7 +44,7 @@ public class BaseClass {
 			log.info("App not loaded properly");
 		}
 
-				return driver;
+		return driver;
 		}catch (Exception e) {
 			e.printStackTrace();
 			return driver;

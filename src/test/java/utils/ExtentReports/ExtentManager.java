@@ -4,26 +4,33 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+
+import jdk.internal.org.jline.utils.Log;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Platform;
+import org.testng.IReporter;
 
 import java.io.File;
-public class ExtentManager {
+public class ExtentManager implements IReporter{
     private static ExtentReports extent;
     private static Platform platform;
-    private static String reportFileName = "CMS_UI-Automation-Report.html";
+    private static String reportFileName = "SwagLabsApp_Automation_Report.html";
     private static String macPath = System.getProperty("user.dir")+ "/TestReport";
     private static String windowsPath = System.getProperty("user.dir")+ "\\TestReport";
     private static String macReportFileLoc = macPath + "/" + reportFileName;
     private static String winReportFileLoc = windowsPath + "\\" + reportFileName;
-
+    public static Logger log =Logger.getLogger("ExtentManager.class");
     public static ExtentReports getInstance() {
         if (extent == null)
             createInstance();
+//        extent.flush();
         return extent;
     }
 
     //Create an extent report instance
     public static ExtentReports createInstance() {
+ 
         platform = getCurrentPlatform();
         String fileName = getReportFileLocation(platform);
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
@@ -36,7 +43,7 @@ public class ExtentManager {
 
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
-
+       
         return extent;
     }
 
@@ -90,5 +97,9 @@ public class ExtentManager {
         }
         return platform;
     }
+ //   public static void main() {
+ //   	ExtentReports ex=getInstance();
+    	
+//    }
 
 }

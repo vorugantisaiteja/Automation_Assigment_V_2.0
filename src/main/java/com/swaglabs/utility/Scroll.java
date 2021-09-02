@@ -15,15 +15,15 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class Scroll extends BaseClass{
+	
+	//Invoking the constructor
 	public Scroll(AppiumDriver<MobileElement> driver) {
 		
 	}
 	
+	//Scrolls until the specified element is displayed and clicks on it once it is displayed
 	public void scroll_UntilElementFound(String ele) {
-//		String mainpath="//android.widget.TextView[@text='";
-//		String endpath="']";
-//		String finalpath;
-//		finalpath=mainpath.concat(ele).concat(endpath);
+
 		       for(int i=0;i<=5;i++) {
 		    	   TouchAction  action =new TouchAction(driver);	
 					Dimension size	=driver.manage().window().getSize();
@@ -55,10 +55,32 @@ public class Scroll extends BaseClass{
 						
 					}
 			}
-		       
-				
+		       		
 		
 	}
+	public void scrollDown() {
+
+		TouchAction  action =new TouchAction(driver);	
+		Dimension size	=driver.manage().window().getSize();
+		int width=size.width;
+		int height=size.height;				
+		int middleOfX=width/2;
+		int startYCoordinate= (int)(height*.5);
+		int endYCoordinate= (int)(height*.2);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		
+		new TouchAction((PerformsTouchActions) driver)
+		.press(PointOption.point(middleOfX, startYCoordinate))
+		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
+		.moveTo(PointOption.point(middleOfX, endYCoordinate)).release().perform();		
+		
+	}
+
 	}
 
 
