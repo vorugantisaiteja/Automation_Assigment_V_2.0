@@ -1,8 +1,11 @@
 package com.swaglabs.utility;
 
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -20,19 +23,37 @@ public class BaseClass {
 	
 	public static AppiumDriver<MobileElement> driver;
 	public static Logger log =Logger.getLogger("BaseClass.class");
+	public static String propertyFilePath="configs//Configuration.properties";
+	public static String platform_name;
+	public static String platform_version;
+	public static String device_name;
+	public static String udid;
+	public static String app_package;
+	public static String app_activity;
+	
 	public static AppiumDriver<MobileElement> setUp() {
-		try {		
+		try {	
+			BufferedReader reader = new BufferedReader(new FileReader(propertyFilePath));
+			Properties properties = new Properties();
+			properties.load(reader);
 			
+			platform_name=properties.getProperty("PLATFORM_NAME");
+			platform_version=properties.getProperty("PLATFORM_VERSION");
+			device_name=properties.getProperty("DEVICE_NAME");
+			udid=properties.getProperty("UDID");
+			app_package=properties.getProperty("APP_PACKAGE");
+			app_activity=properties.getProperty("APP_ACTIVITY");
+					
 		DesiredCapabilities cap=new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.PLATFORM_NAME,"ANDROID");
-		cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10 QKQ1.190915.002");
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi Note 7 Pro");
-		cap.setCapability(MobileCapabilityType.UDID, "d9b3ca47");
+		cap.setCapability(MobileCapabilityType.PLATFORM_NAME,platform_name);
+		cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, platform_version);
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, device_name);
+		cap.setCapability(MobileCapabilityType.UDID, udid);
 //		cap.setCapability(MobileCapabilityType.APP, "");
-		cap.setCapability("appPackage", "com.swaglabsmobileapp");
-		cap.setCapability("appActivity", "com.swaglabsmobileapp.SplashActivity");
+		cap.setCapability("appPackage", app_package);
+		cap.setCapability("appActivity", app_activity);
 		
-		URL url=new URL("http://127.0.0.1:4723/wd/hub");
+		URL url=new URL(properties.getProperty("URL"));
 		driver =new AppiumDriver<MobileElement>(url, cap);
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
        

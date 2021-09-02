@@ -1,83 +1,92 @@
-2021-09-02 18:49:05 INFO  class:41 - App Launched Successfully
-2021-09-02 18:49:05 INFO  class:42 - Starting Verify_Gridview_Checkout Scenario
-2021-09-02 18:49:08 INFO  class:38 - Loggedin Successfully
-2021-09-02 18:49:11 INFO  class:90 - -------------------------------------
-2021-09-02 18:49:11 INFO  class:91 - Details after filtering w.r.t Name (Z to A)
-2021-09-02 18:49:11 INFO  class:92 - Test.allTheThings() T-Shirt (Red) $15.99
-2021-09-02 18:49:11 INFO  class:93 - Sauce Labs Onesie $7.99
-2021-09-02 18:49:11 INFO  class:94 - **************************************
-2021-09-02 18:49:11 INFO  class:95 - 
-2021-09-02 18:49:48 INFO  class:65 - Finding the Cart Status
-2021-09-02 18:49:50 INFO  class:70 - Cart Status is Not Empty
-2021-09-02 18:49:50 INFO  class:71 - Products count in the cart: 1
-2021-09-02 18:49:50 INFO  class:89 - Navigated to the cart
-2021-09-02 18:49:50 INFO  class:109 - Sauce Labs Backpack product name is same as mentioned in the product page
-2021-09-02 18:49:51 INFO  class:122 - Price is same as mentioned in the product page $29.99
-2021-09-02 18:49:51 INFO  class:98 - Clicked on Checkout
-2021-09-02 18:49:53 INFO  class:138 - Navigated to Checkout Information Page
-2021-09-02 18:49:56 INFO  class:143 - Entered the checkout details
-2021-09-02 18:49:58 INFO  class:109 - Sauce Labs Backpack product name is same as mentioned in the product page
-2021-09-02 18:49:58 INFO  class:122 - Price is same as mentioned in the product page $29.99
-2021-09-02 18:49:58 INFO  class:155 - Navigated to Checkout Overview Page
-2021-09-02 18:50:04 INFO  class:171 - Your order has been dispatched, and will arrive just as fast as the pony can get there!
-2021-09-02 18:50:06 INFO  class:24 - Clicked on Menu icon
-2021-09-02 18:50:17 INFO  class:24 - Clicked on Menu icon
-2021-09-02 18:50:21 INFO  class:216 - Logged out successfully
-2021-09-02 18:50:21 INFO  class:96 - End of Verify_Gridview_Checkout Scenario
-2021-09-02 18:50:21 INFO  class:104 - Driver Quit
-2021-09-02 18:50:32 INFO  class:41 - App Launched Successfully
-2021-09-02 18:50:32 INFO  class:33 - Starting listview_MultipleProducts_Checkout Scenario
-2021-09-02 18:50:39 INFO  class:57 - Loggedin Successfully
-2021-09-02 18:50:39 INFO  class:230 - Clicked on List-Grid View Toggle button
-2021-09-02 18:50:45 INFO  class:47 - Product Added Successfully
-2021-09-02 18:50:46 INFO  class:47 - Product Added Successfully
-2021-09-02 18:50:46 INFO  class:65 - Finding the Cart Status
-2021-09-02 18:50:46 INFO  class:70 - Cart Status is Not Empty
-2021-09-02 18:50:46 INFO  class:71 - Products count in the cart: 2
-2021-09-02 18:50:46 INFO  class:89 - Navigated to the cart
-2021-09-02 18:50:48 INFO  class:122 - Price is same as mentioned in the product page $29.99
-2021-09-02 18:50:48 INFO  class:109 - Sauce Labs Bolt T-Shirt product name is same as mentioned in the product page
-2021-09-02 18:50:48 INFO  class:122 - Price is same as mentioned in the product page $15.99
-2021-09-02 18:50:55 INFO  class:138 - Navigated to Checkout Information Page
-2021-09-02 18:50:58 INFO  class:143 - Entered the checkout details
-2021-09-02 18:51:00 INFO  class:155 - Navigated to Checkout Overview Page
-2021-09-02 18:51:21 INFO  class:171 - Your order has been dispatched, and will arrive just as fast as the pony can get there!
-2021-09-02 18:51:22 INFO  class:24 - Clicked on Menu icon
-2021-09-02 18:51:33 INFO  class:24 - Clicked on Menu icon
-2021-09-02 18:51:36 INFO  class:216 - Logged out successfully
-2021-09-02 18:51:36 INFO  class:94 - End of Verify_Listview_Multiple_Products_Checkout
-2021-09-02 18:51:36 INFO  class:102 - Driver Quit
-2021-09-02 18:51:49 INFO  class:41 - App Launched Successfully
-2021-09-02 18:51:49 INFO  class:36 - Starting Checkout Scenario
-2021-09-02 18:51:55 INFO  class:57 - Loggedin Successfully
-2021-09-02 18:51:56 INFO  class:230 - Clicked on List-Grid View Toggle button
-2021-09-02 18:51:58 INFO  class:47 - Product Added Successfully
-2021-09-02 18:52:00 INFO  class:47 - Product Added Successfully
-2021-09-02 18:52:00 INFO  class:65 - Finding the Cart Status
-2021-09-02 18:52:00 INFO  class:70 - Cart Status is Not Empty
-2021-09-02 18:52:00 INFO  class:71 - Products count in the cart: 2
-2021-09-02 18:52:01 INFO  class:89 - Navigated to the cart
-2021-09-02 18:52:01 INFO  class:109 - Sauce Labs Backpack product name is same as mentioned in the product page
-2021-09-02 18:52:02 INFO  class:122 - Price is same as mentioned in the product page $29.99
-2021-09-02 18:52:02 INFO  class:109 - Sauce Labs Bolt T-Shirt product name is same as mentioned in the product page
-2021-09-02 18:52:03 INFO  class:122 - Price is same as mentioned in the product page $15.99
-2021-09-02 18:52:03 INFO  class:207 - Product removed successfully from the cart
-2021-09-02 18:52:04 INFO  class:109 - Sauce Labs Bolt T-Shirt product name is same as mentioned in the product page
-2021-09-02 18:52:04 INFO  class:122 - Price is same as mentioned in the product page $15.99
-2021-09-02 18:52:10 INFO  class:138 - Navigated to Checkout Information Page
-2021-09-02 18:52:13 INFO  class:143 - Entered the checkout details
-2021-09-02 18:52:16 INFO  class:109 - Sauce Labs Bolt T-Shirt product name is same as mentioned in the product page
-2021-09-02 18:52:16 INFO  class:122 - Price is same as mentioned in the product page $15.99
-2021-09-02 18:52:16 INFO  class:155 - Navigated to Checkout Overview Page
-2021-09-02 18:52:22 INFO  class:171 - Your order has been dispatched, and will arrive just as fast as the pony can get there!
-2021-09-02 18:52:23 INFO  class:24 - Clicked on Menu icon
-2021-09-02 18:52:27 INFO  class:216 - Logged out successfully
-2021-09-02 18:52:27 INFO  class:111 - End of Verify_Listview_Add_Remove_Checkout
-2021-09-02 18:52:27 INFO  class:119 - Driver Quit
-2021-09-02 18:52:39 INFO  class:41 - App Launched Successfully
-2021-09-02 18:52:52 INFO  class:41 - App Launched Successfully
-2021-09-02 18:52:55 INFO  class:38 - Loggedin Successfully
-2021-09-02 18:52:55 INFO  class:36 - Logging in with Problem_User credentials
-2021-09-02 18:53:06 INFO  class:53 - Bug: Could not add the product Sauce Labs Bike Light
-2021-09-02 18:53:10 INFO  class:191 - Bug: Sauce Labs Bike Light- Product Name is not same in Home page and Detail Page
-2021-09-02 18:53:11 INFO  class:53 - Driver Quit
+2021-09-02 23:27:02 INFO  class:62 - App Launched Successfully
+2021-09-02 23:27:02 INFO  class:42 - Starting Verify_Gridview_Checkout Scenario
+2021-09-02 23:27:06 INFO  class:38 - Loggedin Successfully
+2021-09-02 23:27:10 INFO  class:90 - -------------------------------------
+2021-09-02 23:27:10 INFO  class:91 - Details after filtering w.r.t Name (Z to A)
+2021-09-02 23:27:10 INFO  class:92 - Test.allTheThings() T-Shirt (Red) $15.99
+2021-09-02 23:27:10 INFO  class:93 - Sauce Labs Onesie $7.99
+2021-09-02 23:27:10 INFO  class:94 - **************************************
+2021-09-02 23:27:10 INFO  class:95 - 
+2021-09-02 23:27:47 INFO  class:65 - Finding the Cart Status
+2021-09-02 23:27:48 INFO  class:70 - Cart Status is Not Empty
+2021-09-02 23:27:48 INFO  class:71 - Products count in the cart: 1
+2021-09-02 23:27:49 INFO  class:89 - Navigated to the cart
+2021-09-02 23:27:49 INFO  class:109 - Sauce Labs Backpack product name is same as mentioned in the product page
+2021-09-02 23:27:50 INFO  class:122 - Price is same as mentioned in the product page $29.99
+2021-09-02 23:27:50 INFO  class:98 - Clicked on Checkout
+2021-09-02 23:27:52 INFO  class:145 - Navigated to Checkout Information Page
+2021-09-02 23:27:55 INFO  class:150 - Entered the checkout details
+2021-09-02 23:27:56 INFO  class:109 - Sauce Labs Backpack product name is same as mentioned in the product page
+2021-09-02 23:27:56 INFO  class:122 - Price is same as mentioned in the product page $29.99
+2021-09-02 23:27:57 INFO  class:162 - Navigated to Checkout Overview Page
+2021-09-02 23:28:02 INFO  class:178 - Your order has been dispatched, and will arrive just as fast as the pony can get there!
+2021-09-02 23:28:03 INFO  class:24 - Clicked on Menu icon
+2021-09-02 23:28:14 INFO  class:24 - Clicked on Menu icon
+2021-09-02 23:28:18 INFO  class:216 - Logged out successfully
+2021-09-02 23:28:18 INFO  class:96 - End of Verify_Gridview_Checkout Scenario
+2021-09-02 23:28:18 INFO  class:104 - Driver Quit
+2021-09-02 23:28:30 INFO  class:62 - App Launched Successfully
+2021-09-02 23:28:30 INFO  class:33 - Starting listview_MultipleProducts_Checkout Scenario
+2021-09-02 23:28:37 INFO  class:57 - Loggedin Successfully
+2021-09-02 23:28:37 INFO  class:230 - Clicked on List-Grid View Toggle button
+2021-09-02 23:28:40 INFO  class:47 - Product Added Successfully
+2021-09-02 23:28:41 INFO  class:47 - Product Added Successfully
+2021-09-02 23:28:41 INFO  class:65 - Finding the Cart Status
+2021-09-02 23:28:41 INFO  class:70 - Cart Status is Not Empty
+2021-09-02 23:28:41 INFO  class:71 - Products count in the cart: 2
+2021-09-02 23:28:41 INFO  class:89 - Navigated to the cart
+2021-09-02 23:28:42 INFO  class:109 - Sauce Labs Backpack product name is same as mentioned in the product page
+2021-09-02 23:28:43 INFO  class:109 - Sauce Labs Bolt T-Shirt product name is same as mentioned in the product page
+2021-09-02 23:28:43 INFO  class:122 - Price is same as mentioned in the product page $15.99
+2021-09-02 23:28:49 INFO  class:145 - Navigated to Checkout Information Page
+2021-09-02 23:28:52 INFO  class:150 - Entered the checkout details
+2021-09-02 23:28:53 INFO  class:162 - Navigated to Checkout Overview Page
+2021-09-02 23:29:13 INFO  class:178 - Your order has been dispatched, and will arrive just as fast as the pony can get there!
+2021-09-02 23:29:14 INFO  class:24 - Clicked on Menu icon
+2021-09-02 23:29:25 INFO  class:24 - Clicked on Menu icon
+2021-09-02 23:29:28 INFO  class:216 - Logged out successfully
+2021-09-02 23:29:28 INFO  class:94 - End of Verify_Listview_Multiple_Products_Checkout
+2021-09-02 23:29:28 INFO  class:102 - Driver Quit
+2021-09-02 23:29:41 INFO  class:62 - App Launched Successfully
+2021-09-02 23:29:41 INFO  class:36 - Starting Checkout Scenario
+2021-09-02 23:29:48 INFO  class:57 - Loggedin Successfully
+2021-09-02 23:29:48 INFO  class:230 - Clicked on List-Grid View Toggle button
+2021-09-02 23:29:52 INFO  class:47 - Product Added Successfully
+2021-09-02 23:29:53 INFO  class:47 - Product Added Successfully
+2021-09-02 23:29:53 INFO  class:65 - Finding the Cart Status
+2021-09-02 23:29:53 INFO  class:70 - Cart Status is Not Empty
+2021-09-02 23:29:53 INFO  class:71 - Products count in the cart: 2
+2021-09-02 23:29:53 INFO  class:89 - Navigated to the cart
+2021-09-02 23:29:53 INFO  class:109 - Sauce Labs Backpack product name is same as mentioned in the product page
+2021-09-02 23:29:55 INFO  class:109 - Sauce Labs Bolt T-Shirt product name is same as mentioned in the product page
+2021-09-02 23:29:55 INFO  class:122 - Price is same as mentioned in the product page $15.99
+2021-09-02 23:29:56 INFO  class:214 - Product removed successfully from the cart
+2021-09-02 23:29:56 INFO  class:109 - Sauce Labs Bolt T-Shirt product name is same as mentioned in the product page
+2021-09-02 23:29:56 INFO  class:122 - Price is same as mentioned in the product page $15.99
+2021-09-02 23:30:02 INFO  class:145 - Navigated to Checkout Information Page
+2021-09-02 23:30:05 INFO  class:150 - Entered the checkout details
+2021-09-02 23:30:06 INFO  class:109 - Sauce Labs Bolt T-Shirt product name is same as mentioned in the product page
+2021-09-02 23:30:07 INFO  class:122 - Price is same as mentioned in the product page $15.99
+2021-09-02 23:30:07 INFO  class:162 - Navigated to Checkout Overview Page
+2021-09-02 23:30:12 INFO  class:178 - Your order has been dispatched, and will arrive just as fast as the pony can get there!
+2021-09-02 23:30:13 INFO  class:24 - Clicked on Menu icon
+2021-09-02 23:30:17 INFO  class:216 - Logged out successfully
+2021-09-02 23:30:17 INFO  class:111 - End of Verify_Listview_Add_Remove_Checkout
+2021-09-02 23:30:17 INFO  class:119 - Driver Quit
+2021-09-02 23:30:30 INFO  class:62 - App Launched Successfully
+2021-09-02 23:30:43 INFO  class:62 - App Launched Successfully
+2021-09-02 23:30:46 INFO  class:38 - Loggedin Successfully
+2021-09-02 23:30:46 INFO  class:38 - Logging in with Problem_User credentials
+2021-09-02 23:30:57 INFO  class:53 - Bug: Could not add the product Sauce Labs Bike Light
+2021-09-02 23:31:02 INFO  class:198 - Bug: Sauce Labs Bike Light- Product Name is not same in Home page and Detail Page
+2021-09-02 23:31:06 INFO  class:47 - Product Added Successfully
+2021-09-02 23:31:06 INFO  class:65 - Finding the Cart Status
+2021-09-02 23:31:06 INFO  class:70 - Cart Status is Not Empty
+2021-09-02 23:31:06 INFO  class:71 - Products count in the cart: 1
+2021-09-02 23:31:06 INFO  class:89 - Navigated to the cart
+2021-09-02 23:31:08 INFO  class:98 - Clicked on Checkout
+2021-09-02 23:31:09 INFO  class:145 - Navigated to Checkout Information Page
+2021-09-02 23:31:12 INFO  class:150 - Entered the checkout details
+2021-09-02 23:31:14 INFO  class:162 - Navigated to Checkout Overview Page
+2021-09-02 23:31:15 INFO  class:235 - Bug-Product price and Item value is not same
+2021-09-02 23:31:15 INFO  class:83 - Driver Quit

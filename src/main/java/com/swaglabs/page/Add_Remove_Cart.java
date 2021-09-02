@@ -123,7 +123,14 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 				
 			}
 			}catch(org.openqa.selenium.NoSuchElementException e1) {
-				log.info("Price is not same as mentioned in the product page");
+				log.info("Bug- Price is not same as mentioned in the product page");
+				ScreenshotUtility scrnsht=new ScreenshotUtility(driver);
+	 			 try {
+					scrnsht.screenshot("Bug-Price mismatch");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	}
 		
 		
@@ -176,7 +183,7 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 		driver.findElement(MobileBy.AccessibilityId("test-BACK HOME")).click();
 	}
 	
-	//Validates the product details are same in products page and home page
+	//Validates the product details are same in products page and details page
 	public void detailPageVerification(int i) throws IOException {
 		String HomePageEletext=driver.findElement(By.xpath("(//android.widget.TextView[@content-desc='test-Item title'])["+i+"]")).getText();
 		driver.findElement(By.xpath("(//android.widget.TextView[@content-desc='test-Item title'])["+i+"]")).click();
@@ -210,6 +217,33 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 			log.info("Unable to perform the action");
 			
 		}
+		
+	}
+	public int checkoutOverview_PriceVerification() {
+		int status=0;
+		String productprice=driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc='test-Price']/android.widget.TextView")).getText();
+	    String itemtotal=driver.findElement(By.xpath("//android.widget.ScrollView[@content-desc=\"test-CHECKOUT: OVERVIEW\"]/android.view.ViewGroup/android.widget.TextView[5]")).getText();
+	    String value1=productprice.replaceAll("[^0-9.]", "");
+	    String value2=itemtotal.replaceAll("[^0-9.]", "");
+	    
+	    if(value1.equals(value2)) {
+	    	status=1;
+	    	log.info("Product price and item value is same");
+	    	return status;
+	    }else {
+	    	ScreenshotUtility scrnsht=new ScreenshotUtility(driver);
+	    	log.info("Bug-Product price and Item value is not same");
+			 try {
+				scrnsht.screenshot("Bug-Product price and Item value is not same");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			 return status;
+	    }
+	}
+	public void clickon_BacktoProducts() {
+		driver.findElement(MobileBy.AccessibilityId("test-BACK TO PRODUCTS")).click();
 		
 	}
 }
