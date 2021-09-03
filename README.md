@@ -1,8 +1,8 @@
 # Framework Info
  Page Object Model framework is designed in such a way that page class files and testcases are maintained in separate folders and page wise objects to be created in the test cases in order to access page wise elements and perform some actions related to the page.
- Page classes are present in src/main/java/com.swaglabs.page folder
- Common utilities are present in src/main/java/com.swaglabs.utility folder
- Test Cases are present in src/test/java/com.swaglabs.testcases folder
+   1. Page classes are present in src/main/java/com.swaglabs.page folder
+   2. Common utilities are present in src/main/java/com.swaglabs.utility folder
+   3. Test Cases are present in src/test/java/com.swaglabs.testcases folder
  
 
 # Folder Structure
@@ -15,12 +15,12 @@
 7. configs            -> Configuration.properties
 
 # Getting Started
-.jar files to be installed
+.jar files to be installed with choice of version
 
-#jar file#        #Version#
-java-client    -     7.5.1
-selenium-java  -     3.141.59
-testng         -     7.3.0
-log4j          -     1.2.17
-commons-io     -     2.6
+#jar file#             #Version#
+1. java-client    -     7.5.1
+2. selenium-java  -     3.141.59
+3. testng         -     7.3.0
+4. log4j          -     1.2.17
+5. commons-io     -     2.6
 
