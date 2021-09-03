@@ -1,10 +1,11 @@
-# Automation_Assigment_V_2.0
-1. As per the requirement i have implemented five test cases of SwagsLabs Application in Android Platform
-2. Implemented a framework using Page Object Model and TestNG, used log4j for logs and for reports used testNG reports
-3. While performing automation i found few bugs and screenshots has been taken and stored in src/main/utility/screenshots folder
-4. Logs are captured and stored in src/main/utility/logs folder
-5. Test cases are written in the form of testcase class files and are present in src/test/java/com.swaglabs.testcases folder
-6. Page classes are present src/main/java/com.swaglabs.page and utility classes are present in src/main/java/com.swaglabs.utility folder
-7. All the external dependencies have been added through pom.xml and the corresponding jar files are stored in Maven Dependencies
+# Framework
+ Page Object Model framework
 
-
+# Folder Structure
+src/main/java -> com.swaglabs.page      -> Add_Remove_Cart.java, Login.java, Product_Page.java 
+src/main/java -> com.swaglabs.utility   -> BaseClass.java, ScreenshotUtility.java, Scroll.java, WaitUtility.java
+src/test/java -> com.swaglabs.testcases -> Verify_Gridview_Checkout.java, Verify_Listview_Multiple_Products_Checkout.java, Verify_Listview_Add_Remove_Checkout.java,                                                        Verify_Product_Checkoutpage.java
+src/test/resources -> log4j.properties
+src/main/utility   -> logs ->  Appiumlogs.log
+src/main/utility   -> Screenshots
+configs            -> Configuration.properties
