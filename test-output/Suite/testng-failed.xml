@@ -4,26 +4,15 @@
   <listeners>
     <listener class-name="utils.ExtentReports.ExtentManager"/>
   </listeners>
-  <test thread-count="5" name="Verify_Gridview_Checkout(failed)">
+  <test thread-count="5" name="Verify_Listview_Multiple_Products_Checkout(failed)">
     <classes>
-      <class name="com.swaglabs.testcases.Verify_Gridview_Checkout">
+      <class name="com.swaglabs.testcases.Verify_Listview_Multiple_Products_Checkout">
         <methods>
-          <include name="Checkout"/>
-          <include name="applaunch"/>
+          <include name="listview_MultipleProducts_Checkout"/>
           <include name="teardown"/>
-        </methods>
-      </class> <!-- com.swaglabs.testcases.Verify_Gridview_Checkout -->
-    </classes>
-  </test> <!-- Verify_Gridview_Checkout(failed) -->
-  <test thread-count="5" name="Verify_Listview_Add_Remove_Checkout(failed)">
-    <classes>
-      <class name="com.swaglabs.testcases.Verify_Listview_Add_Remove_Checkout">
-        <methods>
           <include name="applaunch"/>
-          <include name="listview_Checkout"/>
-          <include name="teardown"/>
         </methods>
-      </class> <!-- com.swaglabs.testcases.Verify_Listview_Add_Remove_Checkout -->
+      </class> <!-- com.swaglabs.testcases.Verify_Listview_Multiple_Products_Checkout -->
     </classes>
-  </test> <!-- Verify_Listview_Add_Remove_Checkout(failed) -->
+  </test> <!-- Verify_Listview_Multiple_Products_Checkout(failed) -->
 </suite> <!-- Failed suite [Suite] -->

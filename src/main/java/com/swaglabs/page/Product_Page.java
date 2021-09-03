@@ -235,5 +235,17 @@ public class Product_Page extends com.swaglabs.utility.BaseClass{
     	
     	
     }
-   
+    //Extracting product name
+    public String get_Product_Name(int num) {
+    	String Product_name;
+    	Product_name=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Item title'])["+num+"]")).getText();
+    	return Product_name;
+    }
+    
+    //Extracting product details
+    public String get_Product_Price(int num) {
+    	String Product_name;
+    	Product_name=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Price'])["+num+"]")).getText();
+    	return Product_name;
+    }
 }

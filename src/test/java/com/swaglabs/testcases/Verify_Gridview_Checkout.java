@@ -41,19 +41,21 @@ public class Verify_Gridview_Checkout extends com.swaglabs.utility.BaseClass{
 	public void Checkout() throws IOException {
 	log.info("Starting Verify_Gridview_Checkout Scenario");
 	Login login=new Login(driver);
+	Product_Page menu=new Product_Page(driver);
+	Add_Remove_Cart add=new Add_Remove_Cart(driver);
+	Scroll s=new Scroll(driver);
 	
 	//Login with valid credentials
 	login.clickonLogin("standard_user","secret_sauce");
-	Product_Page menu=new Product_Page(driver);
-	Add_Remove_Cart add=new Add_Remove_Cart(driver);
 	
-	//Extracting the product details of the product
-	String product=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Item title'])[1]")).getText();
-	String productprice=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Price'])[1]")).getText();
+	
+	//Extracting the details of the product
+	String product=menu.get_Product_Name(1);
+	String productprice=menu.get_Product_Price(1);
 	
 	//Calling a Descending order sort function
 	menu.desc_sort();
-	Scroll s=new Scroll(driver);
+	
 	
 	//Scrolling till the element found and followed by click operation
 	s.scroll_UntilElementFound(product);

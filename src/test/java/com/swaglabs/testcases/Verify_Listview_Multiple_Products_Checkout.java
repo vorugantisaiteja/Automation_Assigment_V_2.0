@@ -47,10 +47,10 @@ public class Verify_Listview_Multiple_Products_Checkout {
 		menu.clickon_Toogle_List_Grid();
 		
 		//Finding the details of the products that needs to be added to the cart
-		String product1=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Item title'])[1]")).getText();
-		String productprice1=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Price'])[1]")).getText();
-		String product2=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Item title'])[3]")).getText();
-		String productprice2=driver.findElement(MobileBy.xpath("(//android.widget.TextView[@content-desc='test-Price'])[3]")).getText();
+		String product1=menu.get_Product_Name(1);
+		String productprice1=menu.get_Product_Price(1);
+		String product2=menu.get_Product_Name(3);
+		String productprice2=menu.get_Product_Price(3);
 		
 		//Adding the products to the cart
 		add.add_ToCart(1);

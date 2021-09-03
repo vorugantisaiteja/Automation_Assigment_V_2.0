@@ -37,6 +37,7 @@ public class BaseClass {
 			Properties properties = new Properties();
 			properties.load(reader);
 			
+			//Extracting platform, device and app details from Configuration.properties file
 			platform_name=properties.getProperty("PLATFORM_NAME");
 			platform_version=properties.getProperty("PLATFORM_VERSION");
 			device_name=properties.getProperty("DEVICE_NAME");
@@ -49,7 +50,6 @@ public class BaseClass {
 		cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, platform_version);
 		cap.setCapability(MobileCapabilityType.DEVICE_NAME, device_name);
 		cap.setCapability(MobileCapabilityType.UDID, udid);
-//		cap.setCapability(MobileCapabilityType.APP, "");
 		cap.setCapability("appPackage", app_package);
 		cap.setCapability("appActivity", app_activity);
 		

@@ -23,7 +23,7 @@ public class Scroll extends BaseClass{
 	
 	//Scrolls until the specified element is displayed and clicks on it once it is displayed
 	public void scroll_UntilElementFound(String ele) {
-
+               
 		       for(int i=0;i<=5;i++) {
 		    	   TouchAction  action =new TouchAction(driver);	
 					Dimension size	=driver.manage().window().getSize();
@@ -58,6 +58,8 @@ public class Scroll extends BaseClass{
 		       		
 		
 	}
+	
+	//Scrolldown function
 	public void scrollDown() {
 
 		TouchAction  action =new TouchAction(driver);	
