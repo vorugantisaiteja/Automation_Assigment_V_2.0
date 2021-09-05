@@ -8,8 +8,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.swaglabs.page.Add_Remove_Cart;
-import com.swaglabs.page.Login;
 import com.swaglabs.utility.Scroll;
 import com.swaglabs.utility.WaitUtility;
 
@@ -22,9 +20,15 @@ import com.aventstack.extentreports.ExtentReports;
 import com.swaglabs.page.*;
 
 
-public class Verify_Gridview_Checkout extends com.swaglabs.utility.BaseClass{
+public class Verify_Gridview_Checkout {
 	public static AppiumDriver<MobileElement> driver;
 	public static Logger log =Logger.getLogger("Verify_Gridview_Checkout.class");
+	Login login=new Login(driver);
+	Product_Page menu=new Product_Page(driver);
+	Add_Remove_Cart add=new Add_Remove_Cart(driver);
+	Product_Page pr=new Product_Page(driver);
+	Scroll s=new Scroll(driver);
+	WaitUtility w=new WaitUtility(driver);
 
 	
 	//App Launches
@@ -38,12 +42,8 @@ public class Verify_Gridview_Checkout extends com.swaglabs.utility.BaseClass{
 	/*	After launching the app from the product Grid view page adds a product to the cart 
 	and performs checkout operation cart. Followed by logout from the application*/
 	@Test(priority=0)
-	public void Checkout() throws IOException {
+	public void gridview_Checkout() throws IOException {
 	log.info("Starting Verify_Gridview_Checkout Scenario");
-	Login login=new Login(driver);
-	Product_Page menu=new Product_Page(driver);
-	Add_Remove_Cart add=new Add_Remove_Cart(driver);
-	Scroll s=new Scroll(driver);
 	
 	//Login with valid credentials
 	login.clickonLogin("standard_user","secret_sauce");
@@ -101,8 +101,10 @@ public class Verify_Gridview_Checkout extends com.swaglabs.utility.BaseClass{
 	//After the execution of the test cases, driver quit function is called.
 	@AfterTest()
 	public void teardown() {
-		WaitUtility w=new WaitUtility(driver);
+		
+		//Implicit wait function
 		w.implicitwait();
+		
         log.info("Driver Quit");
 		driver.quit();
 

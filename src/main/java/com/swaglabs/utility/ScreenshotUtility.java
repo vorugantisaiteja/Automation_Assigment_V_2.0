@@ -20,6 +20,7 @@ import io.appium.java_client.MobileElement;
 
 public class ScreenshotUtility extends BaseClass{
 	
+	static String screenshot_finalpath;
 	//Invoking the constructor
 	public ScreenshotUtility(AppiumDriver<MobileElement> driver) {
 		
@@ -31,5 +32,13 @@ public class ScreenshotUtility extends BaseClass{
 	    File srcFile=((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
  
 	    File targetFile=new File(path_screenshot + filename +".jpg");
+	    screenshot_finalpath=path_screenshot + filename +".jpg";
 	    FileUtils.copyFile(srcFile,targetFile);
-	} }
+	}
+	
+	//Returns screenshot path
+	public static String get_ScreenshotPath() {
+		return screenshot_finalpath;
+	}
+	
+}

@@ -29,7 +29,7 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 	public Add_Remove_Cart(AppiumDriver<MobileElement> driver) {
 		
 	}
-//	Logger log=new Logger.getLogger(BaseClass.class);
+
 	
 	//Adds a product to the cart based on the index num
 	public void add_ToCart(int num) throws IOException {
@@ -37,7 +37,6 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 		String strend="]";
 		String i=String.valueOf(num);
 		String Combined=ele.concat(i).concat(strend);
-//		System.out.println(Combined);
 		driver.findElement(By.xpath(Combined)).click();
 		try {
 			
@@ -78,7 +77,6 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 
 		}
 
-//		return status;
 	}
 	
 	 
@@ -219,6 +217,7 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 		}
 		
 	}
+	//Performs price verification operation during checkout overview
 	public int checkoutOverview_PriceVerification() {
 		int status=0;
 		String productprice=driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc='test-Price']/android.widget.TextView")).getText();
@@ -242,6 +241,8 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 			 return status;
 	    }
 	}
+	
+	//Clicks on Back to products button
 	public void clickon_BacktoProducts() {
 		driver.findElement(MobileBy.AccessibilityId("test-BACK TO PRODUCTS")).click();
 		

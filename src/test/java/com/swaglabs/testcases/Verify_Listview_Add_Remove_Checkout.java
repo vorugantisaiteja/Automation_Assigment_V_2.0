@@ -20,6 +20,12 @@ import io.appium.java_client.MobileElement;
 public class Verify_Listview_Add_Remove_Checkout {
 	public static AppiumDriver<MobileElement> driver;
 	public static Logger log =Logger.getLogger("Verify_Gridview_Checkout.class");
+	Login login=new Login(driver);
+	Product_Page menu=new Product_Page(driver);
+	Add_Remove_Cart add=new Add_Remove_Cart(driver);
+	Product_Page pr=new Product_Page(driver);
+	Scroll s=new Scroll(driver);
+	WaitUtility w=new WaitUtility(driver);
 	
 	//App launches
 	@BeforeTest()
@@ -32,16 +38,11 @@ public class Verify_Listview_Add_Remove_Checkout {
     from the cart and performs checkout operation with existing product in the cart. 
 	Followed by logout from the application*/
 	@Test(priority=0)
-    public void listview_Checkout() throws IOException {
-		log.info("Starting Checkout Scenario");
-		Login login=new Login(driver);
-
-		Product_Page menu=new Product_Page(driver);
-		Add_Remove_Cart add=new Add_Remove_Cart(driver);
-		Scroll s=new Scroll(driver);
-		
+    public void listview_Add_Remove_Checkout() throws IOException {
+		log.info("Starting Checkout Scenario");		
 		//Scrolls down in the login page
 		s.scrollDown();
+		
 		/*Taps on the specified element so that credentials will be auto filled to placeholders 
 		and clicks on login button*/
 		login.tapToAutoFill("standard_user");
@@ -114,8 +115,10 @@ public class Verify_Listview_Add_Remove_Checkout {
 	//After the execution of the test cases, driver quit function is called.
 	@AfterTest()
 	public void teardown() {
-		WaitUtility w=new WaitUtility(driver);
+		
+		//Implicit wait function
 		w.implicitwait();
+		
         log.info("Driver Quit");
 		driver.quit();
 

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.swaglabs.utility.Scroll;
+import com.swaglabs.utility.WaitUtility;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
@@ -18,8 +19,9 @@ public class Product_Page extends com.swaglabs.utility.BaseClass{
 	
 	// Clicks on menu icon
 	public void menuClick() {
+		WaitUtility w=new WaitUtility(driver);
          try {
-        	 
+        	 w.implicitwait();
 		driver.findElement(MobileBy.AccessibilityId("test-Menu")).click();
 		log.info("Clicked on Menu icon");
          }catch(org.openqa.selenium.NoSuchElementException e) {

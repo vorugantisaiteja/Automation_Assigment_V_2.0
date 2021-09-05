@@ -45,23 +45,23 @@ public class BaseClass {
 			app_package=properties.getProperty("APP_PACKAGE");
 			app_activity=properties.getProperty("APP_ACTIVITY");
 					
-		DesiredCapabilities cap=new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.PLATFORM_NAME,platform_name);
-		cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, platform_version);
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, device_name);
-		cap.setCapability(MobileCapabilityType.UDID, udid);
-		cap.setCapability("appPackage", app_package);
-		cap.setCapability("appActivity", app_activity);
+		    DesiredCapabilities cap=new DesiredCapabilities();
+		    cap.setCapability(MobileCapabilityType.PLATFORM_NAME,platform_name);
+		    cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, platform_version);
+		    cap.setCapability(MobileCapabilityType.DEVICE_NAME, device_name);
+		    cap.setCapability(MobileCapabilityType.UDID, udid);
+		    cap.setCapability("appPackage", app_package);
+		    cap.setCapability("appActivity", app_activity);
 		
-		URL url=new URL(properties.getProperty("URL"));
-		driver =new AppiumDriver<MobileElement>(url, cap);
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		    URL url=new URL(properties.getProperty("URL"));
+		    driver =new AppiumDriver<MobileElement>(url, cap);
+		    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
        
-		try {
-		if(driver.findElement(MobileBy.AccessibilityId("test-LOGIN")).isDisplayed()) {
-			log.info("App Launched Successfully");
-		}
-		}catch(org.openqa.selenium.NoSuchElementException e1) {
+		    try {
+		        if(driver.findElement(MobileBy.AccessibilityId("test-LOGIN")).isDisplayed()) {
+			    log.info("App Launched Successfully");
+		     }
+		     }catch(org.openqa.selenium.NoSuchElementException e1) {
 			log.info("App not loaded properly");
 		}
 

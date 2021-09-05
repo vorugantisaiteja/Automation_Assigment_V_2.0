@@ -21,6 +21,13 @@ public class Verify_Product_Checkoutpage {
 	public static AppiumDriver<MobileElement> driver;
 	public static Logger log =Logger.getLogger("Verify_Product_Checkoutpage.class");
 	
+	Login login=new Login(driver);
+	Add_Remove_Cart add=new Add_Remove_Cart(driver);
+	Product_Page pr=new Product_Page(driver);
+	Product_Page menu=new Product_Page(driver);
+	Scroll s=new Scroll(driver);
+	WaitUtility w=new WaitUtility(driver);
+	
 	//App launches
 	@BeforeTest()
 	public void applaunch() {
@@ -30,14 +37,11 @@ public class Verify_Product_Checkoutpage {
 	
 	@Test(priority=0)
 	public void product_Checkout_Validation() throws IOException {
-		driver=BaseClass.setUp();
-		Login login=new Login(driver);
 		
 		//Login with valid credentials
 		login.clickonLogin("problem_user","secret_sauce");
 		log.info("Logging in with Problem_User credentials");
-		Add_Remove_Cart add=new Add_Remove_Cart(driver);
-		Product_Page pr=new Product_Page(driver);
+		
 		//Adding a product to the cart
 		add.add_ToCart(2);
 		
@@ -53,9 +57,6 @@ public class Verify_Product_Checkoutpage {
 	@Test(priority=1)
 	public void checkoutOverview() throws IOException {
 		int status;
-		Login login=new Login(driver);
-		Product_Page menu=new Product_Page(driver);
-		Add_Remove_Cart add=new Add_Remove_Cart(driver);
 		Scroll s=new Scroll(driver);
 		
 		//Adds product to the cart
@@ -93,7 +94,7 @@ public class Verify_Product_Checkoutpage {
 	@AfterTest()
 	public void teardown() {
 		
-		WaitUtility w=new WaitUtility(driver);
+		//Implicit wait function
 		w.implicitwait();
         log.info("Driver Quit");
 		driver.quit();
