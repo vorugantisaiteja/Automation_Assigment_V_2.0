@@ -24,3 +24,9 @@
 4. log4j          -     1.2.17
 5. commons-io     -     2.6
 
+# Important Files
+1. Log4j.properties file is stored in src/test/resources folder
+2. Captured logs will be stored in src/main/utility/logs folder
+3. Screenshots get saved and stored in src/main/utility/Screeshots folder in case of any failure
+4. Configuration.properties file is stored in configs folder
+5. A detailed html reported will get generated after test execution and will be stored in TestReport folder 
