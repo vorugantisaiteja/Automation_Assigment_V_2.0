@@ -38,6 +38,7 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 		String i=String.valueOf(num);
 		String Combined=ele.concat(i).concat(strend);
 		driver.findElement(By.xpath(Combined)).click();
+
 		try {
 			
 		
@@ -51,7 +52,7 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 			System.out.println("Bug: Could not add the product "+product);
 			log.info("Bug: Could not add the product "+product);
 			ScreenshotUtility scrnsht=new ScreenshotUtility(driver);
-			scrnsht.screenshot("Bug-Unable to add product");
+			String sc1=scrnsht.screenshot("Bug-Unable to add product");
 		}
 		
 
@@ -195,7 +196,8 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
         	 System.out.println("Bug: "+HomePageEletext+"- Product Name is not same in Home page and Detail Page");
         	 log.info("Bug: "+HomePageEletext+"- Product Name is not same in Home page and Detail Page");
         	 ScreenshotUtility scrnsht=new ScreenshotUtility(driver);
- 			 scrnsht.screenshot("Bug-Mismatch of Product Details");
+        	 String sc2 =scrnsht.screenshot("Bug-Mismatch of Product Details");
+ 			 
          }
 		
 	}
@@ -233,7 +235,7 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 	    	ScreenshotUtility scrnsht=new ScreenshotUtility(driver);
 	    	log.info("Bug-Product price and Item value is not same");
 			 try {
-				scrnsht.screenshot("Bug-Product price and Item value is not same");
+				 String sc1=scrnsht.screenshot("Bug-Product price and Item value is not same");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

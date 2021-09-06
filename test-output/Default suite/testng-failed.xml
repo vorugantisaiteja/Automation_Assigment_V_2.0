@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.swaglabs.testcases.Verify_Gridview_Checkout">
+      <class name="com.swaglabs.testcases.Verify_Product_Checkoutpage">
         <methods>
-          <include name="Checkout"/>
-          <include name="applaunch"/>
+          <include name="product_Checkout_Validation"/>
           <include name="teardown"/>
+          <include name="applaunch"/>
         </methods>
-      </class> <!-- com.swaglabs.testcases.Verify_Gridview_Checkout -->
+      </class> <!-- com.swaglabs.testcases.Verify_Product_Checkoutpage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

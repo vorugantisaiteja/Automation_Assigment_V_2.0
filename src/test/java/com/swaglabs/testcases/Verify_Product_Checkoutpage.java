@@ -3,6 +3,7 @@ package com.swaglabs.testcases;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
+import org.testng.AssertJUnit;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -86,8 +87,8 @@ public class Verify_Product_Checkoutpage {
 			menu.clickon_LogoutOption();
 		}
 		else {
-			
-		}
+				
+			}
 	}
 	
 	//After the execution of the test cases, driver quit function is called.

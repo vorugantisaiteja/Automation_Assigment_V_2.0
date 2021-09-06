@@ -27,13 +27,14 @@ public class ScreenshotUtility extends BaseClass{
 	}
 	
 	// Screenshot will be captured and will be stored in the specified path
-	public void screenshot(String filename) throws IOException{
+	public String screenshot(String filename) throws IOException{
 		String path_screenshot=System.getProperty("user.dir")+"\\src\\main\\utility\\screenshots\\";
 	    File srcFile=((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
  
 	    File targetFile=new File(path_screenshot + filename +".jpg");
 	    screenshot_finalpath=path_screenshot + filename +".jpg";
 	    FileUtils.copyFile(srcFile,targetFile);
+	    return screenshot_finalpath;
 	}
 	
 	//Returns screenshot path

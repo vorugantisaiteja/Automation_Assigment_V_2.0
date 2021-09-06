@@ -2,6 +2,7 @@ package com.swaglabs.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.swaglabs.utility.Scroll;
 import com.swaglabs.utility.WaitUtility;
@@ -21,9 +22,10 @@ public class Product_Page extends com.swaglabs.utility.BaseClass{
 	public void menuClick() {
 		WaitUtility w=new WaitUtility(driver);
          try {
-        	 w.implicitwait();
-		driver.findElement(MobileBy.AccessibilityId("test-Menu")).click();
-		log.info("Clicked on Menu icon");
+        	 //waits until the specified element is accessible
+        	 w.until_Element_IsAccessible("test-Menu");
+		     driver.findElement(MobileBy.AccessibilityId("test-Menu")).click();
+		     log.info("Clicked on Menu icon");
          }catch(org.openqa.selenium.NoSuchElementException e) {
         	 log.info("Unable to click on menu icon");        	 
          }
@@ -205,8 +207,8 @@ public class Product_Page extends com.swaglabs.utility.BaseClass{
   //Clicks on Logout from menu and validates the logout has been successful or not
     public void clickon_LogoutOption() {
 		try {
-    	menuClick();
-		driver.findElement(MobileBy.AccessibilityId("test-LOGOUT")).click();
+    	    menuClick();
+		    driver.findElement(MobileBy.AccessibilityId("test-LOGOUT")).click();
 		}
 		catch(org.openqa.selenium.NoSuchElementException e1) {
 			menuClick();

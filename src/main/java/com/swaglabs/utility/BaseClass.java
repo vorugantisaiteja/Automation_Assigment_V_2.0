@@ -62,10 +62,10 @@ public class BaseClass {
 			    log.info("App Launched Successfully");
 		     }
 		     }catch(org.openqa.selenium.NoSuchElementException e1) {
-			log.info("App not loaded properly");
-		}
+			    log.info("App not loaded properly");
+		    }
 
-		return driver;
+		    return driver;
 		}catch (Exception e) {
 			e.printStackTrace();
 			return driver;

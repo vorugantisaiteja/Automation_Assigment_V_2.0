@@ -1,6 +1,9 @@
 package utils.Listeners;
 
 import org.testng.Assert;
+
+import static org.testng.Assert.fail;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,7 +23,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import org.apache.commons.io.FileUtils;
 import utils.ExtentReports.ExtentManager;
-//import utils.ExtentReports.ExtentTestManager;
+
 
 public class TestListener extends Verify_Gridview_Checkout implements ITestListener  {
     //Extent Report Declarations
@@ -45,25 +48,39 @@ public class TestListener extends Verify_Gridview_Checkout implements ITestListe
     public synchronized void onTestSuccess(ITestResult result) {
     System.out.println("*** Executed " + result.getMethod().getMethodName() + " test successfully...");
         test.get().pass("Test passed");
+        String screenShotPath = null;
+        try {
+            screenShotPath=ScreenshotUtility.get_ScreenshotPath();   
+            } catch (Exception e1) {
+                 // TODO Auto-generated catch block 
+                 e1.printStackTrace();
+            }
+         try {
+        	 test.get().addScreenCaptureFromPath(screenShotPath);
+             } 
+         catch (IOException e) {
+             System.out.println("An exception occured while taking screenshot " + e.getCause());
+            }
     }
 
     public synchronized void onTestFailure(ITestResult result) {
     System.out.println("*** Test execution " + result.getMethod().getMethodName() + " failed...");
         Assert.fail("Test Failed!");
        
-String file = System.getProperty("user.dir") + "\\TestReport" +"\\screenshot.png" ;
-String screenShotPath = null;
-try {
-screenShotPath=ScreenshotUtility.get_ScreenshotPath();
-} catch (Exception e1) {
-// TODO Auto-generated catch block
-e1.printStackTrace();
-}
-try {
-Assert.fail("Snapshot below:"+ test.get().addScreenCaptureFromPath(screenShotPath));
-} catch (IOException e) {
-System.out.println("An exception occured while taking screenshot " + e.getCause());
-}
+    String screenShotPath = null;
+    try {
+        screenShotPath=ScreenshotUtility.get_ScreenshotPath();   
+        } catch (Exception e1) {
+             // TODO Auto-generated catch block 
+             e1.printStackTrace();
+        }
+     try {
+    	   
+    	   Assert.fail("Snapshot below:"+ test.get().addScreenCaptureFromPath(screenShotPath));
+         } 
+     catch (IOException e) {
+         System.out.println("An exception occured while taking screenshot " + e.getCause());
+        }
     }
 
     public synchronized void onTestSkipped(ITestResult result) {
