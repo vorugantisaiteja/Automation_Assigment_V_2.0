@@ -27,6 +27,7 @@
 # Important Files
 1. Log4j.properties file is stored in src/test/resources folder
 2. Captured logs will be stored in src/main/utility/logs folder
-3. Screenshots get saved and stored in src/main/utility/Screeshots folder in case of any failure
+3. Screenshots get saved and stored in src/main/utility/screenshots folder in case of bugs
 4. Configuration.properties file is stored in configs folder
-5. A detailed html reported will get generated after test execution and will be stored in TestReport folder 
+5. A detailed html report named as SwagLabsApp_Automation_Report.html is generated after test execution and will be stored in TestReport folder 
+6. Screenshots of bugs are attached to the SwagLabsApp_Automation_Report.html report
