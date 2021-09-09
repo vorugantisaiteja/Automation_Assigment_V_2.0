@@ -1,6 +1,10 @@
 package com.swaglabs.page;
 
 import static org.testng.AssertJUnit.assertEquals;
+import io.appium.java_client.PerformsTouchActions;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -13,6 +17,7 @@ import org.openqa.selenium.interactions.touch.TouchActions;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
@@ -247,6 +252,43 @@ public class Add_Remove_Cart extends com.swaglabs.utility.BaseClass{
 	//Clicks on Back to products button
 	public void clickon_BacktoProducts() {
 		driver.findElement(MobileBy.AccessibilityId("test-BACK TO PRODUCTS")).click();
+		
+	}
+	
+	//Drags and drops a product into the cart
+	public void dragAndDrop() {
+		MobileElement ele1=driver.findElement(MobileBy.xpath("(//android.view.ViewGroup[@content-desc='test-Drag Handle'])[1]/android.widget.TextView"));
+		MobileElement ele2=driver.findElement(MobileBy.xpath("//android.view.ViewGroup[@content-desc='test-Cart drop zone']/android.view.ViewGroup"));
+		
+		int startXCoordinate=ele1.getLocation().x+(ele1.getSize().width/2);
+		int startYCoordinate=ele1.getLocation().y+(ele1.getSize().width/2);
+		
+		int endXCoordinate=ele2.getLocation().x+(ele2.getSize().width/8);
+		int endYCoordinate=ele2.getLocation().y+(ele2.getSize().width/8);
+		
+		new TouchAction((PerformsTouchActions) driver)
+		.longPress(PointOption.point(startXCoordinate, startYCoordinate))
+		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
+		.moveTo(PointOption.point(endXCoordinate, endYCoordinate)).release().perform();
+		
+		try {
+			if(driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc='test-REMOVE']")).isDisplayed()) {
+				log.info("Product Added Successfully");
+		      }
+			
+	         }catch(org.openqa.selenium.NoSuchElementException e1) {
+	        	 log.info("Not Able to the product");
+	         }
+    }
+	
+	//Clicks on Continue Shopping button
+	public void clickon_ContinueShopping() {
+		driver.findElement(MobileBy.AccessibilityId("test-CONTINUE SHOPPING")).click();
+	}
+	
+	//Clicks on Delete button
+	public void clickon_DeleteIcon() {
+		driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc='test-Delete']/android.view.ViewGroup")).click();
 		
 	}
 }

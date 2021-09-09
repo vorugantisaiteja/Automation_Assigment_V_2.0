@@ -1,77 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-09-06T18:25:39 IST" name="Suite" finished-at="2021-09-06T18:29:33 IST" duration-ms="233641">
+  <suite started-at="2021-09-09T13:46:12 IST" name="Suite" finished-at="2021-09-09T13:50:35 IST" duration-ms="263225">
     <groups>
     </groups>
-    <test started-at="2021-09-06T18:25:39 IST" name="Verify_Gridview_Checkout" finished-at="2021-09-06T18:26:59 IST" duration-ms="80037">
+    <test started-at="2021-09-09T13:46:12 IST" name="Verify_Gridview_Checkout" finished-at="2021-09-09T13:47:34 IST" duration-ms="82404">
       <class name="com.swaglabs.testcases.Verify_Gridview_Checkout">
-        <test-method is-config="true" signature="applaunch()[pri:0, instance:com.swaglabs.testcases.Verify_Gridview_Checkout@658c5a19]" started-at="2021-09-06T18:25:39 IST" name="applaunch" finished-at="2021-09-06T18:25:55 IST" duration-ms="15275" status="PASS">
+        <test-method is-config="true" signature="applaunch()[pri:0, instance:com.swaglabs.testcases.Verify_Gridview_Checkout@658c5a19]" started-at="2021-09-09T13:46:12 IST" name="applaunch" finished-at="2021-09-09T13:46:24 IST" duration-ms="12406" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applaunch -->
-        <test-method signature="gridview_Checkout()[pri:0, instance:com.swaglabs.testcases.Verify_Gridview_Checkout@658c5a19]" started-at="2021-09-06T18:25:55 IST" name="gridview_Checkout" finished-at="2021-09-06T18:26:59 IST" duration-ms="64006" status="PASS">
+        <test-method signature="gridview_Checkout()[pri:0, instance:com.swaglabs.testcases.Verify_Gridview_Checkout@658c5a19]" started-at="2021-09-09T13:46:24 IST" name="gridview_Checkout" finished-at="2021-09-09T13:47:33 IST" duration-ms="69266" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- gridview_Checkout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.swaglabs.testcases.Verify_Gridview_Checkout@658c5a19]" started-at="2021-09-06T18:26:59 IST" name="teardown" finished-at="2021-09-06T18:26:59 IST" duration-ms="695" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.swaglabs.testcases.Verify_Gridview_Checkout@658c5a19]" started-at="2021-09-09T13:47:33 IST" name="teardown" finished-at="2021-09-09T13:47:34 IST" duration-ms="682" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.swaglabs.testcases.Verify_Gridview_Checkout -->
     </test> <!-- Verify_Gridview_Checkout -->
-    <test started-at="2021-09-06T18:27:00 IST" name="Verify_Listview_Multiple_Products_Checkout" finished-at="2021-09-06T18:28:02 IST" duration-ms="62169">
+    <test started-at="2021-09-09T13:47:34 IST" name="Verify_Listview_Multiple_Products_Checkout" finished-at="2021-09-09T13:48:27 IST" duration-ms="52519">
       <class name="com.swaglabs.testcases.Verify_Listview_Multiple_Products_Checkout">
-        <test-method is-config="true" signature="applaunch()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Multiple_Products_Checkout@78aa1f72]" started-at="2021-09-06T18:27:00 IST" name="applaunch" finished-at="2021-09-06T18:27:13 IST" duration-ms="12831" status="PASS">
+        <test-method is-config="true" signature="applaunch()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Multiple_Products_Checkout@78aa1f72]" started-at="2021-09-09T13:47:34 IST" name="applaunch" finished-at="2021-09-09T13:47:46 IST" duration-ms="11566" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applaunch -->
-        <test-method signature="listview_MultipleProducts_Checkout()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Multiple_Products_Checkout@78aa1f72]" started-at="2021-09-06T18:27:13 IST" name="listview_MultipleProducts_Checkout" finished-at="2021-09-06T18:28:01 IST" duration-ms="48622" status="PASS">
+        <test-method signature="listview_MultipleProducts_Checkout()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Multiple_Products_Checkout@78aa1f72]" started-at="2021-09-09T13:47:46 IST" name="listview_MultipleProducts_Checkout" finished-at="2021-09-09T13:48:26 IST" duration-ms="40292" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- listview_MultipleProducts_Checkout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Multiple_Products_Checkout@78aa1f72]" started-at="2021-09-06T18:28:01 IST" name="teardown" finished-at="2021-09-06T18:28:02 IST" duration-ms="712" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Multiple_Products_Checkout@78aa1f72]" started-at="2021-09-09T13:48:26 IST" name="teardown" finished-at="2021-09-09T13:48:27 IST" duration-ms="658" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.swaglabs.testcases.Verify_Listview_Multiple_Products_Checkout -->
     </test> <!-- Verify_Listview_Multiple_Products_Checkout -->
-    <test started-at="2021-09-06T18:28:02 IST" name="Verify_Listview_Add_Remove_Checkout" finished-at="2021-09-06T18:28:50 IST" duration-ms="47544">
+    <test started-at="2021-09-09T13:48:27 IST" name="Verify_Listview_Add_Remove_Checkout" finished-at="2021-09-09T13:49:08 IST" duration-ms="41096">
       <class name="com.swaglabs.testcases.Verify_Listview_Add_Remove_Checkout">
-        <test-method is-config="true" signature="applaunch()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Add_Remove_Checkout@df6620a]" started-at="2021-09-06T18:28:02 IST" name="applaunch" finished-at="2021-09-06T18:28:14 IST" duration-ms="12124" status="PASS">
+        <test-method is-config="true" signature="applaunch()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Add_Remove_Checkout@df6620a]" started-at="2021-09-09T13:48:27 IST" name="applaunch" finished-at="2021-09-09T13:48:38 IST" duration-ms="11165" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applaunch -->
-        <test-method signature="listview_Add_Remove_Checkout()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Add_Remove_Checkout@df6620a]" started-at="2021-09-06T18:28:14 IST" name="listview_Add_Remove_Checkout" finished-at="2021-09-06T18:28:49 IST" duration-ms="34590" status="PASS">
+        <test-method signature="listview_Add_Remove_Checkout()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Add_Remove_Checkout@df6620a]" started-at="2021-09-09T13:48:38 IST" name="listview_Add_Remove_Checkout" finished-at="2021-09-09T13:49:07 IST" duration-ms="29165" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- listview_Add_Remove_Checkout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Add_Remove_Checkout@df6620a]" started-at="2021-09-06T18:28:49 IST" name="teardown" finished-at="2021-09-06T18:28:50 IST" duration-ms="827" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.swaglabs.testcases.Verify_Listview_Add_Remove_Checkout@df6620a]" started-at="2021-09-09T13:49:07 IST" name="teardown" finished-at="2021-09-09T13:49:08 IST" duration-ms="759" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.swaglabs.testcases.Verify_Listview_Add_Remove_Checkout -->
     </test> <!-- Verify_Listview_Add_Remove_Checkout -->
-    <test started-at="2021-09-06T18:28:50 IST" name="Verify_Product_Checkoutpage" finished-at="2021-09-06T18:29:33 IST" duration-ms="43321">
+    <test started-at="2021-09-09T13:49:08 IST" name="Verify_Product_Checkoutpage" finished-at="2021-09-09T13:49:51 IST" duration-ms="42910">
       <class name="com.swaglabs.testcases.Verify_Product_Checkoutpage">
-        <test-method is-config="true" signature="applaunch()[pri:0, instance:com.swaglabs.testcases.Verify_Product_Checkoutpage@2931522b]" started-at="2021-09-06T18:28:50 IST" name="applaunch" finished-at="2021-09-06T18:29:02 IST" duration-ms="12210" status="PASS">
+        <test-method is-config="true" signature="applaunch()[pri:0, instance:com.swaglabs.testcases.Verify_Product_Checkoutpage@2931522b]" started-at="2021-09-09T13:49:08 IST" name="applaunch" finished-at="2021-09-09T13:49:20 IST" duration-ms="11678" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applaunch -->
-        <test-method signature="product_Checkout_Validation()[pri:0, instance:com.swaglabs.testcases.Verify_Product_Checkoutpage@2931522b]" started-at="2021-09-06T18:29:02 IST" name="product_Checkout_Validation" finished-at="2021-09-06T18:29:22 IST" duration-ms="19834" status="PASS">
+        <test-method signature="product_Checkout_Validation()[pri:0, instance:com.swaglabs.testcases.Verify_Product_Checkoutpage@2931522b]" started-at="2021-09-09T13:49:20 IST" name="product_Checkout_Validation" finished-at="2021-09-09T13:49:39 IST" duration-ms="19387" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- product_Checkout_Validation -->
-        <test-method signature="checkoutOverview()[pri:1, instance:com.swaglabs.testcases.Verify_Product_Checkoutpage@2931522b]" started-at="2021-09-06T18:29:22 IST" name="checkoutOverview" finished-at="2021-09-06T18:29:32 IST" duration-ms="10548" status="PASS">
+        <test-method signature="checkoutOverview()[pri:1, instance:com.swaglabs.testcases.Verify_Product_Checkoutpage@2931522b]" started-at="2021-09-09T13:49:39 IST" name="checkoutOverview" finished-at="2021-09-09T13:49:50 IST" duration-ms="11148" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkoutOverview -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.swaglabs.testcases.Verify_Product_Checkoutpage@2931522b]" started-at="2021-09-06T18:29:32 IST" name="teardown" finished-at="2021-09-06T18:29:33 IST" duration-ms="722" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.swaglabs.testcases.Verify_Product_Checkoutpage@2931522b]" started-at="2021-09-09T13:49:50 IST" name="teardown" finished-at="2021-09-09T13:49:51 IST" duration-ms="689" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.swaglabs.testcases.Verify_Product_Checkoutpage -->
     </test> <!-- Verify_Product_Checkoutpage -->
+    <test started-at="2021-09-09T13:49:51 IST" name="Verify_DragAndDrop" finished-at="2021-09-09T13:50:35 IST" duration-ms="43625">
+      <class name="com.swaglabs.testcases.Verify_DragAndDrop">
+        <test-method is-config="true" signature="applaunch()[pri:0, instance:com.swaglabs.testcases.Verify_DragAndDrop@7e19ebf0]" started-at="2021-09-09T13:49:51 IST" name="applaunch" finished-at="2021-09-09T13:50:03 IST" duration-ms="11441" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- applaunch -->
+        <test-method signature="dragAndDrop_product()[pri:0, instance:com.swaglabs.testcases.Verify_DragAndDrop@7e19ebf0]" started-at="2021-09-09T13:50:03 IST" name="dragAndDrop_product" finished-at="2021-09-09T13:50:34 IST" duration-ms="31548" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dragAndDrop_product -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.swaglabs.testcases.Verify_DragAndDrop@7e19ebf0]" started-at="2021-09-09T13:50:34 IST" name="teardown" finished-at="2021-09-09T13:50:35 IST" duration-ms="632" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.swaglabs.testcases.Verify_DragAndDrop -->
+    </test> <!-- Verify_DragAndDrop -->
   </suite> <!-- Suite -->
 </testng-results>

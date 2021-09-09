@@ -45,7 +45,7 @@ public class TestListener extends Verify_Gridview_Checkout implements ITestListe
         test.set(extentTest);
     }
 
-    public synchronized void onTestSuccess(ITestResult result) {
+    public void onTestSuccess(ITestResult result) {
     System.out.println("*** Executed " + result.getMethod().getMethodName() + " test successfully...");
         test.get().pass("Test passed");
         String screenShotPath = null;

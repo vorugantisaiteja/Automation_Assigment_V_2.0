@@ -24,6 +24,10 @@
     <classes>
       <class name="com.swaglabs.testcases.Verify_Product_Checkoutpage"/>
     </classes>
-    
+    </test> <!-- Test -->
+    <test thread-count="1" name="Verify_DragAndDrop">
+    <classes>
+      <class name="com.swaglabs.testcases.Verify_DragAndDrop"/>
+    </classes>    
   </test> <!-- Test -->
 </suite> <!-- Suite -->

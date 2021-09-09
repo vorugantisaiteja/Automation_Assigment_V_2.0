@@ -32,12 +32,7 @@ public class Scroll extends BaseClass{
 					int middleOfX=width/2;
 					int startYCoordinate= (int)(height*.5);
 					int endYCoordinate= (int)(height*.2);
-					try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}	
+
 					
 					new TouchAction((PerformsTouchActions) driver)
 					.press(PointOption.point(middleOfX, startYCoordinate))
@@ -69,17 +64,41 @@ public class Scroll extends BaseClass{
 		int middleOfX=width/2;
 		int startYCoordinate= (int)(height*.5);
 		int endYCoordinate= (int)(height*.2);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+
 		
 		new TouchAction((PerformsTouchActions) driver)
 		.press(PointOption.point(middleOfX, startYCoordinate))
 		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
 		.moveTo(PointOption.point(middleOfX, endYCoordinate)).release().perform();		
+		
+	}
+	
+	//Swipes from right to left based on the specified location
+	public void scroll_RightToLeft() {
+		MobileElement ele1=driver.findElement(MobileBy.xpath("//android.view.ViewGroup[@content-desc='test-Price']/android.widget.TextView"));
+		Dimension size	=driver.manage().window().getSize();
+		int width=size.width;
+		int height1=size.height;				
+		int middleOfY=ele1.getLocation().y+(ele1.getSize().height/2);
+		int startXCoordinate=ele1.getLocation().x+(ele1.getSize().width/2);
+		int endXCoordinate=ele1.getLocation().x+(ele1.getSize().width/4);
+		
+		new TouchAction((PerformsTouchActions) driver)
+		.press(PointOption.point(startXCoordinate, middleOfY))
+		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
+		.moveTo(PointOption.point(endXCoordinate, middleOfY)).release().perform();
+		
+		try {
+			if(driver.findElementByXPath("//android.view.ViewGroup[@content-desc='test-Delete']/android.view.ViewGroup").isDisplayed()) {
+			log.info("Right to Left Swipe operation is successful");
+			}
+			
+		}catch(org.openqa.selenium.NoSuchElementException e1) {
+			log.info("Right to Left Swipe operation is not successful");
+		
+			
+		}
+		
 		
 	}
 
